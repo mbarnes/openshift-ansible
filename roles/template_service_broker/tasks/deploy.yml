@@ -69,7 +69,7 @@
 # Register with broker
 - name: Register TSB with broker
   shell: >
-    {{ openshift_client_binary }} process --config={{ mktemp.stdout }}/admin.kubeconfig -f "{{ mktemp.stdout }}/{{ __tsb_broker_file }}" -n openshift-template-service-broker --param CA_BUNDLE="{{ __ca_bundle.content }}" | {{ openshift_client_binary }} apply --config={{ mktemp.stdout }}/admin.kubeconfig -f -
+    {{ openshift_client_binary }} process --config={{ mktemp.stdout }}/admin.kubeconfig -f "{{ mktemp.stdout }}/{{ __tsb_broker_file }}" -n openshift-template-service-broker --param CA_BUNDLE="{{ __ca_bundle.content }}" | {{ openshift_client_binary }} replace --config={{ mktemp.stdout }}/admin.kubeconfig -f -
 
 - file:
     state: absent
