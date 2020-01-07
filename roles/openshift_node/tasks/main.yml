@@ -72,10 +72,10 @@
   import_tasks: storage_plugin_ceph.yml
   when: "'ceph' in osn_storage_plugin_deps"
 
-- name: iSCSI storage plugin configuration
-  import_tasks: storage_plugin_iscsi.yml
-  when:
-    - "'iscsi' in osn_storage_plugin_deps"
-    - not openshift_is_atomic | bool
+#- name: iSCSI storage plugin configuration
+#  import_tasks: storage_plugin_iscsi.yml
+#  when:
+#    - "'iscsi' in osn_storage_plugin_deps"
+#    - not openshift_is_atomic | bool
 
 ##### END Storage #####
